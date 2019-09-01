@@ -13,4 +13,18 @@ router.post('/', (req, res, next) => {
     });
 });
 
+router.get('/:productId',(req, res, next) => {
+    const id = req.params.productId;
+    if(id === '0'){
+        res.status(200).json({
+            message: 'You got the correct product!',
+            id: id
+        });
+    }else{
+        res.status(200).json({
+            message: 'You got the wrong one!'
+        });
+    }
+});
+
 module.exports = router;
