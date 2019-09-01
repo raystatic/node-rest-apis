@@ -27,4 +27,18 @@ router.get('/:productId',(req, res, next) => {
     }
 });
 
+router.patch('/:productId',(req, res, next) => {
+    const id = req.params.productId;
+    if(id === '0'){
+        res.status(200).json({
+            message: 'You got the product Updated!',
+            id: id
+        });
+    }else{
+        res.status(200).json({
+            message: 'You got the wrong one!'
+        });
+    }
+});
+
 module.exports = router;
