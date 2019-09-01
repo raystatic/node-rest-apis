@@ -3,18 +3,18 @@ const router = express.Router();
 
 router.get('/', (req, res, next) => {
     res.status(200).json({
-        message: 'Handling /GET requests to /products'
+        message: 'List of orders!'
     });
 });
 
 router.post('/', (req, res, next) => {
     res.status(200).json({
-        message: 'Handling /POST requests to /products'
+        message: 'Handling /POST requests of orders'
     });
 });
 
-router.get('/:productId',(req, res, next) => {
-    const id = req.params.productId;
+router.get('/:orderId',(req, res, next) => {
+    const id = req.params.orderId;
     if(id === '0'){
         res.status(200).json({
             message: 'You got the correct product!',
@@ -27,11 +27,11 @@ router.get('/:productId',(req, res, next) => {
     }
 });
 
-router.patch('/:productId',(req, res, next) => {
-    const id = req.params.productId;
+router.patch('/:orderId',(req, res, next) => {
+    const id = req.params.orderId;
     if(id === '0'){
         res.status(200).json({
-            message: 'You got the product Updated!',
+            message: 'You got the order Updated!',
             id: id
         });
     }else{
@@ -41,11 +41,11 @@ router.patch('/:productId',(req, res, next) => {
     }
 });
 
-router.delete('/:productId',(req, res, next) => {
-    const id = req.params.productId;
+router.delete('/:orderId',(req, res, next) => {
+    const id = req.params.orderId;
     if(id === '0'){
         res.status(200).json({
-            message: 'You got the correct Deleted!',
+            message: 'You got the order Deleted!',
             id: id
         });
     }else{
